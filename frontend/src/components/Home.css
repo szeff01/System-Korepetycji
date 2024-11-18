@@ -1,0 +1,155 @@
+/* Home.css */
+.home-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .home-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 10px 30px 10px ;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  .home-header h1 {
+    padding: 20px;
+    font-size: 34px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .logout-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .search-section {
+    height: 400px;
+    background-image: url("/tlo.jpg"); /* Ścieżka do obrazu w folderze public */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .search-overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .search-overlay h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .search-overlay p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 300px;
+  }
+  
+  .search-bar button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+  
+  .categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .category-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .category-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .recommended-section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .recommended-section h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+  
+  .recommendations {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .recommendation-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .recommendation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .recommendation-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .recommendation-card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+  }
+  
