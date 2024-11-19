@@ -1,46 +1,95 @@
-import React from "react";
-import { useNavigate, useLocation } from "react-router-dom"; // useLocation do przekazywania danych
-import "./BookingForm.css";
+import React, { useState, useEffect } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-function BookingForm() {
-  const navigate = useNavigate();
-  const location = useLocation();
+function BookingForm({ teacherId }) {
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [availableSlots, setAvailableSlots] = useState([]);
+  const [selectedSlot, setSelectedSlot] = useState("");
+  const [bookingStatus, setBookingStatus] = useState("");
 
-  // Odbieramy dane o korepetytorze z location.state
-  const { name, availability } = location.state || { name: "Nieznany", availability: [] };
+  useEffect(() => {
+    // Pobranie dostępnych godzin dla danego korepetytora
+    if (selectedDate) {
+      fetch(
+        `http://localhost:3001/teachers/${teacherId}/availability?date=${selectedDate.toISOString()}`
+      )
+        .then((response) => response.json())
+        .then((data) => setAvailableSlots(data))
+        .catch((error) => console.error("Error fetching availability:", error));
+    }
+  }, [selectedDate, teacherId]);
 
-  const handleBack = () => {
-    navigate(-1); // Powrót do poprzedniej strony
-  };
+  const handleBooking = () => {
+    if (!selectedSlot) {
+      setBookingStatus("Wybierz godzinę, aby zarezerwować termin.");
+      return;
+    }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("Rezerwacja potwierdzona!");
-    navigate("/home"); // Przenosimy użytkownika na stronę główną po potwierdzeniu
+    fetch(`http://localhost:3001/teachers/${teacherId}/book`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        date: selectedDate.toISOString(),
+        time: selectedSlot,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Nie udało się zarezerwować terminu.");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setBookingStatus("Rezerwacja powiodła się!");
+        setAvailableSlots((prev) =>
+          prev.filter((slot) => slot !== selectedSlot)
+        );
+      })
+      .catch((error) => {
+        setBookingStatus("Ten termin jest już zajęty.");
+        console.error("Error booking slot:", error);
+      });
   };
 
   return (
-    <div className="booking-container">
-      <header className="booking-header">
-        <button className="back-btn" onClick={handleBack}>Cofnij</button>
-        <h2>Formularz rezerwacji</h2>
-      </header>
-      <div className="booking-content">
-        <h3>Korepetytor: {name}</h3>
-        <form onSubmit={handleSubmit}>
-          <h4>Wybierz dostępny termin:</h4>
-          <ul>
-            {availability.map((slot, index) => (
-              <li key={index}>
-                <label>
-                  <input type="radio" name="slot" value={slot} required /> {slot}
-                </label>
-              </li>
-            ))}
-          </ul>
-          <button type="submit" className="confirm-btn">Potwierdź rezerwację</button>
-        </form>
-      </div>
+    <div>
+      <h3>Zarezerwuj termin</h3>
+      <label>
+        Wybierz datę:
+        <DatePicker
+          selected={selectedDate}
+          onChange={(date) => setSelectedDate(date)}
+          minDate={new Date()}
+          dateFormat="yyyy-MM-dd"
+          placeholderText="Wybierz datę"
+        />
+      </label>
+      {selectedDate && (
+        <div>
+          <h4>Dostępne godziny:</h4>
+          {availableSlots.length > 0 ? (
+            <ul>
+              {availableSlots.map((slot) => (
+                <li key={slot}>
+                  <button
+                    onClick={() => setSelectedSlot(slot)}
+                    disabled={selectedSlot === slot}
+                  >
+                    {slot}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p>Brak dostępnych godzin na ten dzień.</p>
+          )}
+        </div>
+      )}
+      <button onClick={handleBooking}>Zarezerwuj</button>
+      {bookingStatus && <p>{bookingStatus}</p>}
     </div>
   );
 }

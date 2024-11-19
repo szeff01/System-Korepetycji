@@ -1,0 +1,133 @@
+.add-teacher-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .add-teacher-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .add-teacher-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .back-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .back-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .add-teacher-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .add-teacher-form input,
+  .add-teacher-form textarea,
+  .add-teacher-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  
+  .add-teacher-form textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+  .add-teacher-form .category-input,
+  .add-teacher-form .availability-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .add-teacher-form .category-input input,
+  .add-teacher-form .availability-input input,
+  .add-teacher-form .availability-input select {
+    flex: 1;
+  }
+  
+  .add-teacher-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .add-teacher-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .add-teacher-form ul {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .add-teacher-form ul li {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #555;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-teacher-form ul li button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .add-teacher-form ul li button:hover {
+    background-color: #cc0000;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .submit-btn:hover {
+    background-color: #218838;
+  }
+  

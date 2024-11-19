@@ -5,6 +5,8 @@ import Login from "./Login";
 import Register from "./Register";
 import Detail from "./Detail";
 import BookingForm from "./BookingForm"; // Import nowego komponentu
+import AddTeacher from "./AddTeacher";
+
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home />} />
           <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/add-teacher" element={<AddTeacher />} />
+
           <Route path="/booking" element={<BookingForm />} /> {/* Trasa dla formularza */}
         </Routes>
       </BrowserRouter>
