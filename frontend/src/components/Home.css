@@ -1,52 +1,60 @@
 /* Ogólne stylowanie */
-.home-container {
-  font-family: 'Arial', sans-serif;
-  color: #333;
+body {
   margin: 0;
-  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background-color: #f8f9fa;
+  line-height: 1.6;
 }
 
+/* Header */
 .home-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 40px 40px;
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 40px;
+  background: linear-gradient(90deg, #4a90e2, #007bff);
+  color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .home-header h1 {
   font-size: 28px;
   font-weight: bold;
-  color: #007bff;
   margin: 0;
 }
 
 .header-buttons {
   display: flex;
-  gap: 10px;
+  gap: 15px;
 }
 
 .logout-btn,
 .add-teacher-btn {
-  background-color: #007bff;
+  background: linear-gradient(90deg, #4a90e2, #007bff);
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 12px 20px;
+  border-radius: 25px;
   font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
 }
 
 .logout-btn:hover,
 .add-teacher-btn:hover {
-  background-color: #0056b3;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  transform: scale(1.05);
 }
 
-/* Sekcja wyszukiwania */
+/* Sekcja wyszukiwania - poprawione wyrównanie */
 .search-section {
   height: 400px;
-  background-image: url("/tlo.jpg"); /* Ścieżka do obrazu w folderze public */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/tlo.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -54,40 +62,53 @@
   justify-content: center;
   color: white;
   text-align: center;
+  padding: 20px;
 }
 
 .search-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 40px;
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 40px 20px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.3);
   max-width: 800px;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .search-overlay h2 {
   font-size: 36px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   font-weight: bold;
 }
 
 .search-overlay p {
   font-size: 18px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
+/* Pasek wyszukiwania */
 .search-bar {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 10px;
 }
 
 .search-bar input {
   padding: 12px 15px;
   font-size: 16px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
+  border-right: none;
   border-radius: 5px 0 0 5px;
-  width: 70%;
-  max-width: 400px;
+  width: 100%;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #007bff;
 }
 
 .search-bar button {
@@ -98,46 +119,25 @@
   border: none;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .search-bar button:hover {
   background-color: #0056b3;
-}
-
-.categories {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.category-btn {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
-}
-
-.category-btn:hover {
-  background-color: #0056b3;
-  transform: translateY(-2px);
+  transform: scale(1.05);
 }
 
 /* Sekcja Polecane */
 .recommended-section {
   padding: 60px 20px;
+  background-color: #fff;
   text-align: center;
 }
 
 .recommended-section h3 {
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   color: #333;
 }
 
@@ -152,15 +152,15 @@
   background-color: #ffffff;
   padding: 20px;
   width: 220px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   text-align: left;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .recommendation-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2);
 }
 
 .recommendation-card h4 {
@@ -181,6 +181,7 @@
   .home-header {
     flex-direction: column;
     align-items: center;
+    padding: 20px;
   }
 
   .search-section {
@@ -191,11 +192,6 @@
   .search-bar input {
     width: 100%;
     max-width: 100%;
-  }
-
-  .categories {
-    flex-direction: column;
-    gap: 15px;
   }
 
   .recommendation-card {
