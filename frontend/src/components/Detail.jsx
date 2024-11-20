@@ -5,11 +5,11 @@ import "./Detail.css";
 function Detail() {
   const { id } = useParams(); // Pobieramy ID korepetytora z URL
   const navigate = useNavigate();
-  const [teacher, setTeacher] = useState(null); // Stan na dane korepetytora
+  const [teacher, setTeacher] = useState(null); 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    console.log(`Fetching data from http://localhost:3001/teachers/${id}`);
+    // Pobranie danych o korepetytorze z backendu
     fetch(`http://localhost:3001/teachers/${id}`)
       .then((response) => {
         if (!response.ok) {
@@ -18,8 +18,8 @@ function Detail() {
         return response.json();
       })
       .then((data) => {
-        setTeacher(data);
-        setLoading(false);
+        setTeacher(data); // Zapisujemy dane korepetytora w stanie
+        setLoading(false); // Ustawiamy stan ładowania na false
       })
       .catch((error) => {
         console.error("Error fetching teacher data:", error);
@@ -38,28 +38,16 @@ function Detail() {
   return (
     <div className="detail-container">
       <header className="detail-header">
-        <button className="back-btn" onClick={() => navigate(-1)}>
-          Cofnij
-        </button>
+        <button className="back-btn" onClick={() => navigate(-1)}>Cofnij</button>
       </header>
       <div className="detail-content">
         <div className="detail-top">
-          <img
-            src={teacher.profilePicture}
-            alt={`${teacher.name} profile`}
-            className="profile-picture"
-          />
+          <img src={teacher.profilePicture} alt={`${teacher.name} profile`} className="profile-picture" />
           <div className="detail-info">
             <h2>{teacher.name}</h2>
-            <p>
-              <strong>Ocena:</strong> {teacher.rating} ({teacher.reviews} opinii)
-            </p>
-            <p>
-              <strong>Lokalizacja:</strong> {teacher.location}
-            </p>
-            <p>
-              <strong>Opis:</strong> {teacher.description}
-            </p>
+            <p><strong>Ocena:</strong> {teacher.rating} ({teacher.reviews} opinii)</p>
+            <p><strong>Lokalizacja:</strong> {teacher.location}</p>
+            <p><strong>Opis:</strong> {teacher.description}</p>
           </div>
         </div>
         <div className="detail-availability">

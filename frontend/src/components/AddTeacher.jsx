@@ -11,8 +11,8 @@ function AddTeacher() {
     reviews: "",
     location: "",
     profilePicture: "",
-    availability: [], // Tablica dostępnych godzin
-    categories: [], // Tablica dla wielu kategorii
+    availability: [], 
+    categories: [], 
   });
   const [availabilityInput, setAvailabilityInput] = useState({
     day: "",
@@ -69,7 +69,7 @@ function AddTeacher() {
       .then((data) => {
         console.log("Dodano korepetytora:", data);
         alert("Korepetytor został dodany!");
-        navigate("/"); // Powrót na stronę główną
+        navigate("/"); 
       })
       .catch((error) => {
         console.error("Błąd podczas dodawania korepetytora:", error);

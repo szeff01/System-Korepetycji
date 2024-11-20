@@ -5,7 +5,7 @@ import "./Home.css";
 function Home() {
   const [teachers, setTeachers] = useState([]);
   const [filteredTeachers, setFilteredTeachers] = useState([]);
-  const [searchCategory, setSearchCategory] = useState(""); // Pole wyszukiwania
+  const [searchCategory, setSearchCategory] = useState(""); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ function Home() {
       .then((response) => response.json())
       .then((data) => {
         setTeachers(data);
-        setFilteredTeachers(data); // Domyślnie pokazuje wszystkich korepetytorów
+        setFilteredTeachers(data); 
       })
       .catch((error) => console.error("Error fetching teachers:", error));
   }, []);
@@ -49,7 +49,7 @@ function Home() {
           </button>
           <button
             className="add-teacher-btn"
-            onClick={() => navigate("/add-teacher")} // Przejście do formularza dodawania korepetytora
+            onClick={() => navigate("/add-teacher")} 
           >
             Dodaj korepetytora
           </button>
@@ -65,7 +65,7 @@ function Home() {
               type="text"
               placeholder="Szukaj usług lub biznesów"
               value={searchCategory}
-              onChange={handleSearch} // Obsługa wyszukiwania
+              onChange={handleSearch} 
             />
             <button>Szukaj</button>
           </div>

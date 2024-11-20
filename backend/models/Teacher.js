@@ -7,7 +7,7 @@ const TeacherSchema = new mongoose.Schema({
     reviews: { type: Number, required: true },
     location: { type: String, required: true },
     profilePicture: { type: String, required: true },
-    availability: { type: [String], required: true }, // np. ["Poniedziałek 10:00 - 12:00"]
+    availability: { type: [String], required: true }, 
     categories: { type: [String], required: true },
   });
   

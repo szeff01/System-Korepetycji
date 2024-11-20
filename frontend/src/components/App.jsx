@@ -4,7 +4,7 @@ import Home from "./Home";
 import Login from "./Login";
 import Register from "./Register";
 import Detail from "./Detail";
-import BookingForm from "./BookingForm"; // Import nowego komponentu
+import BookingForm from "./BookingForm"; 
 import AddTeacher from "./AddTeacher";
 
 
