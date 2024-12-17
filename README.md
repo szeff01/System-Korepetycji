@@ -2,7 +2,7 @@
 # Testowanie i Jakość Oprogramowania
 
 ## Autor
-Przemysław szewczyk
+Przemysław Szewczyk
 
 ## Temat projektu
 System zarządzania rezerwacjami dla korepetycji.
@@ -95,7 +95,7 @@ Lista testów
     7. Wybierz kategorię Angielski i kliknij Dodaj.  
     8. Wybierz dzień Poniedziałek, ustaw godziny 10:00 - 14:00, i kliknij Dodaj.  
     9. Kliknij przycisk Dodaj Korepetytora.  
-**Oczekiwany rezultat:** Pojawia się komunikat *Korepetytor został dodany!*.  
+**Oczekiwany rezultat:** Pojawia się komunikat *Korepetytor został dodany*.  
 
 **TC002: Dodanie korepetytora bez obowiązkowego pola**  
 **Warunki początkowe:** Użytkownik znajduje się na stronie "Dodaj Korepetytora".  
