@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Register.css"; 
+import "./Register.css";
 
 function Register() {
   const [name, setName] = useState("");
@@ -37,22 +37,25 @@ function Register() {
       <div className="form-box">
         <h2>Rejestracja</h2>
         <form onSubmit={handleSubmit}>
-          <label>Imię</label>
+          <label htmlFor="name">Imię</label>
           <input
+            id="name"
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
-          <label>Email</label>
+          <label htmlFor="email">Email</label>
           <input
+            id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          <label>Hasło</label>
+          <label htmlFor="password">Hasło</label>
           <input
+            id="password"
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
