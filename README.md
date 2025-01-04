@@ -164,6 +164,21 @@ Lista testów
     1. Sprawdź, czy lista zawiera przynajmniej jednego korepetytora (np. Patryk).  
 **Oczekiwany rezultat:** Na stronie widoczna jest lista z dostępnymi korepetytorami, wraz z oceną i lokalizacją.  
 
+## Linki do plików testowych
+
+Testy jednostkowe:
+
+    AddTeacher.categories.test.js
+    AddTeacher.test.js
+    AddTeacher.validation.test.js
+    Login.requiredFields.test.jsx
+    Login.test.jsx
+    Register.test.jsx
+
+Testy integracyjne:
+
+    Login.integration.test.jsx
+
 ## Technologie użyte w projekcie
 
     Frontend:
